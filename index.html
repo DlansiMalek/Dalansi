@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+
+  
+    <title>News Api</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="stylee.css">
+
+  </head>
+  <body>
+    
+    <div class="container">
+      
+      <h3 class="center" style="margin-bottom:20px;">Trendy News<i class="material-icons medium hide-on-small-only" id="icons"></i></h3>
+      
+ 
+
+      <form id="foorma">
+          <div class="input-field">
+              <i class="material-icons prefix">public</i>
+              <input type="text" id="searchquery">
+              <label>Find what's happeing in the World......</label>
+          </div>
+          
+          <div class="row">
+             <input type="submit" id="searchbtn" class="btn col m2 s12" value="search">
+             <input type="reset" id="ssearchbtn" class="btn col m2 s12 red right" value="clear"  style="margin-top:3px;">
+          </div>
+          
+      </form>
+      <nav class="navBar" >
+        <ul id="listItems">
+          <li class="iitem" ><a id="it">IT</a></li>
+          <li class="iitem" ><a id="sports">Sports</a></li>
+          <li class="iitem" ><a id="business">Business</a></li>
+          <li class="iitem" ><a id="industry">Industry</a></li>
+          <li class="iitem" ><a id="health">Health</a></li>
+          <li class="iitem"><a id="entertainment">Entertainement</a></li>
+          <li class="iitem" ><a id="last">Last News</a></li>
+          
+        </ul>
+        
+      </nav>
+      
+      <div id="loader" style="display:none;">
+        <div class="progress">
+          <div class="indeterminate"></div>
+        </div>
+      </div>
+      
+      <div class="row">
+         <div id="newsResults"></div>
+      </div>
+      <div class="newsResults">
+        
+      </div>
+     
+      
+
+
+      
+   </div>
+
+
+
+  
+</body>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="iconChanger.js"></script>
+<script src="newsapi.js"></script>
+<script type="text/javascript">
+  
+  document.getElementById("it").addEventListener("click",goit);
+  function goit(){
+    document.getElementById("searchquery").value = "it";
+    document.getElementById('searchbtn').click();
+}
+
+  document.getElementById("entertainment").addEventListener("click",goenter);
+  function goenter(){
+    document.getElementById("searchquery").value = "entertainment";
+    document.getElementById('searchbtn').click();
+}
+  document.getElementById("sports").addEventListener("click",gosports);
+  function gosports() {
+    document.getElementById("searchquery").value = "sports";
+    document.getElementById('searchbtn').click();
+  }
+  document.getElementById("business").addEventListener("click",gobusiness);
+  function gobusiness() {
+    document.getElementById("searchquery").value = "business";
+    document.getElementById('searchbtn').click();
+  }
+  document.getElementById("industry").addEventListener("click",goindustry);
+  function goindustry() {
+    document.getElementById("searchquery").value = "industry";
+    document.getElementById('searchbtn').click();
+  }
+  document.getElementById("last").addEventListener("click",golast);
+  function golast() {
+    document.getElementById("searchquery").value = "last";
+    document.getElementById('searchbtn').click();
+  }
+  document.getElementById("health").addEventListener("click",gohealth);
+  function gohealth() {
+    document.getElementById("searchquery").value = "health";
+    document.getElementById('searchbtn').click();
+  }
+
+  function default_p() {
+    document.getElementById("searchquery").value = "last";
+    document.getElementById('searchbtn').click();
+  }
+
+  document.getElementById("ttt").addEventListener("mouseover",orange);
+  function orange() {
+    document.getElementById("ttt").style.color="";
+  }
+  
+  document.getElementById("ttt").addEventListener("mouseout",orange);
+  function orange() {
+    document.getElementById("ttt").style.color="black";
+  }
+
+
+</script>
+</html>
